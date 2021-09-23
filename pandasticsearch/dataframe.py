@@ -114,8 +114,9 @@ class DataFrame(object):
             path = index + '/' + doc_type
 
         client = RestClient(url, username, password, verify_ssl)
-        print(path)
+        mapping = client.post(path, {})
 
+        return DataFrame(client=client, mapping=mapping, index=index, doc_type=doc_type, compat=compat)
         return 'ok'
 
     def __getattr__(self, name):
