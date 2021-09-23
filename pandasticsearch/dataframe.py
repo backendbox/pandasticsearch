@@ -117,7 +117,6 @@ class DataFrame(object):
         mapping = client.post(path, {})
 
         return DataFrame(client=client, mapping=mapping, index=index, doc_type=doc_type, compat=compat)
-        return 'ok'
 
     def __getattr__(self, name):
         """
