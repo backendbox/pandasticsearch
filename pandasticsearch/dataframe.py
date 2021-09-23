@@ -115,7 +115,7 @@ class DataFrame(object):
 
         client = RestClient(url, username, password, verify_ssl)
 
-        mapping = client.get(path)
+        mapping = client.post(path)
 
         return DataFrame(client=client, mapping=mapping, index=index, doc_type=doc_type, compat=compat)
 
